@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 
-class NewsDetailesScreen extends StatefulWidget {
+class NewsDetailesScreen extends StatelessWidget {
   final String newsImage,
       newsTitle,
       newsDate,
@@ -11,7 +11,7 @@ class NewsDetailesScreen extends StatefulWidget {
       description,
       content,
       source;
-  const NewsDetailesScreen({
+  NewsDetailesScreen({
     super.key,
     required this.newsImage,
     required this.newsTitle,
@@ -22,17 +22,13 @@ class NewsDetailesScreen extends StatefulWidget {
     required this.source,
   });
 
-  @override
-  State<NewsDetailesScreen> createState() => _NewsDetailesScreenState();
-}
-
-class _NewsDetailesScreenState extends State<NewsDetailesScreen> {
   final format = DateFormat('MMMM dd, yyyy');
+
   @override
   Widget build(BuildContext context) {
     // final width = MediaQuery.sizeOf(context).width * 1;
     final height = MediaQuery.sizeOf(context).height * 1;
-    DateTime dateTime = DateTime.parse(widget.newsDate);
+    DateTime dateTime = DateTime.parse(newsDate);
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
@@ -46,7 +42,7 @@ class _NewsDetailesScreenState extends State<NewsDetailesScreen> {
               borderRadius: const BorderRadius.only(
                   topLeft: Radius.circular(30), topRight: Radius.circular(30)),
               child: CachedNetworkImage(
-                imageUrl: widget.newsImage,
+                imageUrl: newsImage,
                 fit: BoxFit.cover,
                 placeholder: (context, url) =>
                     const Center(child: CircularProgressIndicator()),
@@ -65,7 +61,7 @@ class _NewsDetailesScreenState extends State<NewsDetailesScreen> {
             child: ListView(
               children: [
                 Text(
-                  widget.newsTitle,
+                  newsTitle,
                   style: GoogleFonts.poppins(
                       fontSize: 20,
                       color: Colors.black87,
@@ -78,7 +74,7 @@ class _NewsDetailesScreenState extends State<NewsDetailesScreen> {
                   children: [
                     Expanded(
                       child: Text(
-                        widget.source,
+                        source,
                         style: GoogleFonts.poppins(
                             fontSize: 13,
                             color: Colors.black87,
@@ -98,7 +94,7 @@ class _NewsDetailesScreenState extends State<NewsDetailesScreen> {
                   height: height * 0.02,
                 ),
                 Text(
-                  widget.description,
+                  description,
                   style: GoogleFonts.poppins(
                       fontSize: 15,
                       color: Colors.black87,

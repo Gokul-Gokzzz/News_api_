@@ -1,3 +1,5 @@
+// ignore_for_file: non_constant_identifier_names
+
 import 'package:flutter/material.dart';
 import 'package:news_api/model/categories_news_model.dart';
 import 'package:news_api/model/news_channel_headline_model.dart';
