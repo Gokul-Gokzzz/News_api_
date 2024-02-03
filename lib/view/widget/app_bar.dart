@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:news_api/controller/app_bar_provider.dart';
 
-import 'package:news_api/view/category_screen.dart';
-import 'package:news_api/view/home.dart';
+import 'package:news_api/view/category_screen/category_screen.dart';
+import 'package:news_api/view/home_screen/home.dart';
 import 'package:provider/provider.dart';
 
 // FilterList? selectedMenu;

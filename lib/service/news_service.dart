@@ -6,7 +6,7 @@ import 'package:news_api/model/categories_news_model.dart';
 import 'package:news_api/model/news_channel_headline_model.dart';
 
 class Service {
-  Future<NewsChannelsHeadlinesModel> fetchNewsChannelHeadlinesApi(
+  Future<NewsChannelsHeadlinesModel> newsChannelHeadlinesApi(
       String channelName) async {
     String url =
         'https://newsapi.org/v2/top-headlines?sources=${channelName}&apiKey=916237eeb28947b8a896ecdf70ceea35';
@@ -19,7 +19,7 @@ class Service {
     throw Exception('Error');
   }
 
-  Future<CategoriesNewsModel> fetchCategoriesNewsApi(String category) async {
+  Future<CategoriesNewsModel> categoriesNewsApi(String category) async {
     String url =
         'https://newsapi.org/v2/everything?q=${category}&apiKey=916237eeb28947b8a896ecdf70ceea35';
     final response = await http.get(Uri.parse(url));

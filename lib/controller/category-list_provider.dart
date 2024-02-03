@@ -1,7 +1,9 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 
 class CategoryListProvider extends ChangeNotifier {
-  List<String> CategoriesList = [
+  List<String> categoriesList = [
     'General',
     'Entertainment',
     'Health',
@@ -11,7 +13,7 @@ class CategoryListProvider extends ChangeNotifier {
   ];
   String categoryName = 'general';
   list(index) {
-    categoryName = CategoriesList[index];
+    categoryName = categoriesList[index];
     notifyListeners();
   }
 }
